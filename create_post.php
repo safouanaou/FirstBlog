@@ -39,12 +39,12 @@
     <?php if(!empty($error)): ?>
         <p><?php echo htmlspecialchars($error);?></p>
     <?php endif ;?>
-    <form action="" method="POST">
+    <form action="delete_post.php" method="POST">
         <label for="title">Title</label>
         <input type="text" name="title" value="<?php echo htmlspecialchars($title);?>">
         <label for="post-body">Post</label>
         <textarea name="content" id=""><?php echo htmlspecialchars($content);?></textarea>
-        <button type="submit">Post</button>
+        <button type="submit">Delete</button>
     </form>
 </body>
 </html>

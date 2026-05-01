@@ -10,6 +10,8 @@
     $stmt->execute();
     $posts = $stmt->fetchAll();
 
+
+
     
     
 ?>
@@ -36,7 +38,10 @@
                     <h2><?php echo htmlspecialchars($post['title']);?></h2>
                     <p><?php echo htmlspecialchars($post['content']) ;?></p>
                     <?php if(isset($_SESSION['user_id'])):?>
-
+                        <form action="delete_post.php" method="POST" onsubmit="return confirm('are you sure you want to delete this post?')">
+                            <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($post['id']);?>">
+                            <button type="submit">Delete</button>
+                        </form>
                     <?php endif;?>
                     <p>
                         By <address class="author">admin</address>
